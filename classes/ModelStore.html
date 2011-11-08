@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ModelStore - Gravatar Url</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.4.0/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            <h1><a href="../index.html"><img src="../assets/css/logo.png">Gravatar Url</a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/ModelRelate.html">ModelRelate</a></li>
+            
+                <li><a href="../classes/ModelRelationship.html">ModelRelationship</a></li>
+            
+                <li><a href="../classes/ModelStore.html">ModelStore</a></li>
+            
+                <li><a href="../classes/ToManyRelationship.html">ToManyRelationship</a></li>
+            
+                <li><a href="../classes/ToOneRelationship.html">ToOneRelationship</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/model-store.html">model-store</a></li>
+            
+                <li><a href="../modules/ModelRelate.html">ModelRelate</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main" class="content">
+                    <h1>ModelStore Class</h1>
+<div class="box meta">
+    
+    
+        <div class="uses">
+            Extension For
+            <ul class="inline commas">
+                
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/src_gallery-model-store_js_model-store.js.html#l7"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:7</code></a>
+        </div>
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Singleton that keeps track of models via a register method. Registered models
+are put into ModelList instances that are maintained by the store. The lists are
+keyed by the name of the model and can be retrieved by the getList method. The
+store itself is just a global registry for models and does not fire any events.
+The lists do all the work and any event handlers should be attached to them.</p>
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method private">
+                                <a href="#method__createList">_createList</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__getModelCtor">_getModelCtor</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__getModelName">_getModelName</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__initList">_initList</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_find">find</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getList">getList</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_registerModel">registerModel</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected">
+                                <a href="#method_toString">toString</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_unregisterAll">unregisterAll</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_unregisterModel">unregisterModel</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__lists">_lists</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property private">
+                                <a href="#property__yuid">_yuid</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__createList" class="method item private">
+    <h3 class="name"><code>_createList</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ModelList</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l138"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:138</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Creates a list for a given model</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance, a Model constructor
+  or a string representation of the Model constructor relative
+  to the current scope. ex. 'MyApp.Models.FooModel'
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">ModelList</span>:
+                    
+                    A modelList for the given model
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__getModelCtor" class="method item private">
+    <h3 class="name"><code>_getModelCtor</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l168"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:168</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the constructor function of a given model</p>
+
+<p>NOTE: tried to use Y.cached here but model comes in as
+  BuiltClass when passing a model constructor, so it kept
+  getting confused.  still want to implement some sort of caching</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance, a Model constructor
+  or a string representation of the Model constructor relative
+  to the current scope. ex. 'MyApp.Models.FooModel'
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>:
+                    
+                    The constructor function for the given model,
+  or null if the model constructor could not be determined
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__getModelName" class="method item private">
+    <h3 class="name"><code>_getModelName</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l200"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:200</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Determines the name of a model</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance, a Model constructor
+  or a string representation of the Model constructor relative
+  to the current scope. ex. 'MyApp.Models.FooModel'
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+                    
+                    The name of the model, or 'unknown' if the model
+  name could not be determined
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__initList" class="method item private">
+    <h3 class="name"><code>_initList</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>list</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ModelList</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l218"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:218</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initializes the store list by adding event handlers and setting a store property</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">list</code>
+                        <span class="type">ModelList</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        The model list we are initializing
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">ModelList</span>:
+                    
+                    The initialized model list
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_find" class="method item">
+    <h3 class="name"><code>find</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>The</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Model | null</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l40"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:40</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Finds a model in the store by its id
+TODO:  expand this to search on more than just id</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance, a Model constructor
+  or a string representation of the Model constructor relative
+  to the current scope. ex. 'MyApp.Models.FooModel'
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">The</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        id of the model we are looking for
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Model | null</span>:
+                    
+                    The found model or null if no model could be found
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getList" class="method item">
+    <h3 class="name"><code>getList</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>create</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ModelList</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l58"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:58</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Gets a list of models in the store for a given model.  A list
+will be created if one does not already exist.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Mixed</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance, a Model constructor
+  or a string representation of the Model constructor relative
+  to the current scope. ex. 'MyApp.Models.FooModel'
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">create</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        Flag indicating whether we want to create
+  a list if one doesnt already exist.  Defaults to true
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">ModelList</span>:
+                    
+                    A modelList of the given model
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_registerModel" class="method item">
+    <h3 class="name"><code>registerModel</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Model</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l91"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:91</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Registers a model with the store</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Model</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        A Model instance
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Model</span>:
+                    
+                    The model instance
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toString" class="method item protected">
+    <h3 class="name"><code>toString</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l80"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:80</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>ModelStore[guid]</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_unregisterAll" class="method item">
+    <h3 class="name"><code>unregisterAll</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l108"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:108</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Unregisters all models in the store</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_unregisterModel" class="method item">
+    <h3 class="name"><code>unregisterModel</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>model</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Model</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l122"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:122</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Unregisters a model in the store</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">model</code>
+                        <span class="type">Model</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        The model instance we want to remove
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Model</span>:
+                    
+                    The model instance
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property__lists" class="property item protected">
+    <h3 class="name"><code>_lists</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l29"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:29</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The hash of lists maintained by the store</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> {}</p>
+    
+
+    
+</div>
+
+                
+                    <div id="property__yuid" class="property item private">
+    <h3 class="name"><code>_yuid</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>Defined in
+            
+        
+        <a href="../files/src_gallery-model-store_js_model-store.js.html#l19"><code>src&#x2F;gallery-model-store&#x2F;js&#x2F;model-store.js:19</code></a></p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The unique identifier for this object</p>
+    </div>
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<!--script src="../assets/js/tabs.js"></script-->
+<script src="../assets/../api.js"></script>
+
+
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

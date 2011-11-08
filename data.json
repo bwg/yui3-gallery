@@ -1,0 +1,1319 @@
+{
+    "project": {
+        "name": "Gravatar Url",
+        "description": "This module provides a function for creating gravatar image urls."
+    },
+    "files": {
+        "src/gallery-model-relate/js/model-relationship.js": {
+            "name": "src/gallery-model-relate/js/model-relationship.js",
+            "modules": {},
+            "classes": {
+                "ModelRelationship": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/gallery-model-relate/js/to-many.js": {
+            "name": "src/gallery-model-relate/js/to-many.js",
+            "modules": {},
+            "classes": {
+                "ToManyRelationship": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/gallery-model-relate/js/to-one.js": {
+            "name": "src/gallery-model-relate/js/to-one.js",
+            "modules": {},
+            "classes": {
+                "ToOneRelationship": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/gallery-model-relate/js/model-relate.js": {
+            "name": "src/gallery-model-relate/js/model-relate.js",
+            "modules": {
+                "ModelRelate": 1
+            },
+            "classes": {
+                "ModelRelate": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/gallery-model-store/js/model-store.js": {
+            "name": "src/gallery-model-store/js/model-store.js",
+            "modules": {
+                "model-store": 1
+            },
+            "classes": {
+                "ModelStore": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "ModelRelate": {
+            "name": "ModelRelate",
+            "submodules": {},
+            "classes": {
+                "ModelRelationship": 1,
+                "ToManyRelationship": 1,
+                "ToOneRelationship": 1,
+                "ModelRelate": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 1,
+            "description": "An extension for model and a set of classes that allow relationships to be\ndefined between models"
+        },
+        "model-store": {
+            "name": "model-store",
+            "submodules": {},
+            "classes": {
+                "ModelStore": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 1,
+            "description": "Contains a singleton (ModelStore) that keeps track of managed models"
+        }
+    },
+    "classes": {
+        "ModelRelationship": {
+            "name": "ModelRelationship",
+            "shortname": "ModelRelationship",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ModelRelate",
+            "namespace": "",
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 10,
+            "description": "Object that manages a relationship between two or more models",
+            "is_constructor": 1,
+            "uses": [
+                "EventTarget"
+            ],
+            "params": [
+                {
+                    "name": "config",
+                    "description": "Configuration object",
+                    "type": "Object"
+                }
+            ]
+        },
+        "ToManyRelationship": {
+            "name": "ToManyRelationship",
+            "shortname": "ToManyRelationship",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ModelRelate",
+            "namespace": "",
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 8,
+            "description": "Object that represents a relationship between two models"
+        },
+        "ToOneRelationship": {
+            "name": "ToOneRelationship",
+            "shortname": "ToOneRelationship",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ModelRelate",
+            "namespace": "",
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 8,
+            "description": "Object that represents a relationship between two models"
+        },
+        "ModelRelate": {
+            "name": "ModelRelate",
+            "shortname": "ModelRelate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ModelRelate",
+            "namespace": "",
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 11,
+            "description": "Model extension for defining relationships between models",
+            "example": [
+                "\n    Y.Base.create('parentModel', Y.Model, [Y.ModelRelate], {\n        // prototype methods\n    }, {\n        ATTRS: {\n            // model attributes\n        },\n        RELATIONSHIPS: {\n            'children': {\n                type: 'toMany',\n                key: 'id'\n                relatedModel: 'childModel',\n                relatedKey: 'parentId'\n            }\n        }\n    });"
+            ]
+        },
+        "ModelStore": {
+            "name": "ModelStore",
+            "shortname": "ModelStore",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "model-store",
+            "namespace": "",
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 7,
+            "description": "Singleton that keeps track of models via a register method. Registered models\nare put into ModelList instances that are maintained by the store. The lists are\nkeyed by the name of the model and can be retrieved by the getList method. The\nstore itself is just a global registry for models and does not fire any events.\nThe lists do all the work and any event handlers should be attached to them.",
+            "static": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 46,
+            "itemtype": "property",
+            "name": "toOne",
+            "type": "{String}",
+            "static": 1,
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 54,
+            "itemtype": "property",
+            "name": "toMany",
+            "type": "{String}",
+            "static": 1,
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 64,
+            "description": "The type of the relationship. Either toOne or toMany",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 73,
+            "description": "The related model(s).  A single model for a toOne relationship\nor a modelList for a toMany relationship",
+            "itemtype": "property",
+            "name": "related",
+            "type": "Mixed",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 83,
+            "description": "Initializer",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "config",
+                    "description": "Configuration object",
+                    "type": "Object"
+                }
+            ],
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 102,
+            "description": "Destructor",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 120,
+            "description": "{model.toString} {type} relationship {name} [guid]",
+            "itemtype": "method",
+            "name": "toString",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 133,
+            "description": "Returns true if a model matches the primary/related key relationship",
+            "itemtype": "method",
+            "name": "_checkRelationship",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "The model to check",
+                    "type": "Model"
+                }
+            ],
+            "return": {
+                "description": "true if the model matches the relationship, false if not",
+                "type": "Boolean"
+            },
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 146,
+            "description": "Destroy a related list.  not the models.\npoorly named.  need to fix that.",
+            "itemtype": "method",
+            "name": "_destroyRelated",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 156,
+            "description": "Detach events from this relationship.",
+            "itemtype": "method",
+            "name": "_detachEvents",
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 171,
+            "description": "Returns an array of models that match the primary/related key relationship",
+            "itemtype": "method",
+            "name": "_findRelated",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 184,
+            "description": "Initializes any events for this relationship",
+            "itemtype": "method",
+            "name": "_initEvents",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 200,
+            "description": "Fired when a model has been added to this relationship",
+            "itemtype": "event",
+            "name": "add",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object with a model property\nwhich refers to the model that was added to the relationship",
+                    "type": "EventFacade"
+                }
+            ],
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 209,
+            "description": "Fired when a model has been removed from this relationship",
+            "itemtype": "event",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object with a model property\nwhich refers to the model that was removed from the relationship",
+                    "type": "EventFacade"
+                }
+            ],
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 239,
+            "description": "Initializes the related property of this model",
+            "itemtype": "method",
+            "name": "_initRelated",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 248,
+            "description": "Clears out the related models and refreshes the related models\nfrom the store",
+            "itemtype": "method",
+            "name": "_refreshRelationship",
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 260,
+            "description": "Clears out any existing related models and adds the given\nmodels to the relationship.  Models are not checked to see\nif they match the relationship.",
+            "itemtype": "method",
+            "name": "_setRelated",
+            "params": [
+                {
+                    "name": "models",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 272,
+            "description": "Sets attributes on related models. Primarily called after\na relationship key has changed on a related model from a\ncreate sync operation.",
+            "itemtype": "method",
+            "name": "_setRelatedAttr",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the attribute to set",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value to set",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "options",
+                    "description": "Any options to pass to the attribute set method",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 286,
+            "description": "If a key has changed on this model as the result of a sync 'create',\nwe need to update any related models with the new key. If the key\nchange was not a result of a 'create', refresh the relationship to\nsee if there are any models that match the new key",
+            "itemtype": "method",
+            "name": "_afterKeyChange",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 311,
+            "description": "After a model is added to the related list, check for any models that\nmatch the relationship and add them to the relationship modelList",
+            "itemtype": "method",
+            "name": "_afterStoreAdd",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 322,
+            "description": "After a model is removed from the store, remove it from the\nrelationship if it exists",
+            "itemtype": "method",
+            "name": "_afterStoreRemove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 333,
+            "description": "After a related key has changed on a model in the store,\nwe need to determine whether or not it still belongs in\nthe list of related models",
+            "itemtype": "method",
+            "name": "_afterRelatedKeyChange",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relationship.js",
+            "line": 345,
+            "description": "Check the state of the model to determine if the key changed as a result\nof a sync 'create'.  If so set the src property of the eventFacade so we\ncan propagate that this came from a 'create'.",
+            "itemtype": "method",
+            "name": "_onKeyChange",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 14,
+            "itemtype": "property",
+            "name": "toMany",
+            "type": "{String}",
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 22,
+            "description": "Initializes the related property of this model",
+            "itemtype": "method",
+            "name": "_initRelated",
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 39,
+            "itemtype": "method",
+            "name": "_destroyRelated",
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 48,
+            "description": "Clears out any existing related models and adds the given\nmodels to the relationship.  Models are not checked to see\nif they match the relationship.",
+            "itemtype": "method",
+            "name": "_setRelated",
+            "params": [
+                {
+                    "name": "models",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 65,
+            "description": "Sets attributes on related models. Primarily called after\na relationship key has changed on a related model from a\ncreate sync operation.",
+            "itemtype": "method",
+            "name": "_setRelatedAttr",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the attribute to set",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value to set",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "options",
+                    "description": "Any options to pass to the attribute set method",
+                    "type": "Object"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 83,
+            "description": "After a model is added to the related list, check for any models that\nmatch the relationship and add them to the relationship modelList",
+            "itemtype": "method",
+            "name": "_afterStoreAdd",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 103,
+            "description": "After a model is removed from the store, remove it from the\nrelationship if it exists",
+            "itemtype": "method",
+            "name": "_afterStoreRemove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 123,
+            "description": "After a related key has changed on a model in the store,\nwe need to determine whether or not it still belongs in\nthe list of related models",
+            "itemtype": "method",
+            "name": "_afterRelatedKeyChange",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-many.js",
+            "line": 153,
+            "description": "If the model is not being deleted, we want to persist the destroyed state in our\nrelationship, so prevent the default remove fn from executing",
+            "itemtype": "method",
+            "name": "_onRelatedRemove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToManyRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 17,
+            "description": "Initializes the related property of this model",
+            "itemtype": "method",
+            "name": "_initRelated",
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 28,
+            "description": "Clears out any existing related models and adds the given\nmodels to the relationship.  Models are not checked to see\nif they match the relationship.",
+            "itemtype": "method",
+            "name": "_setRelated",
+            "params": [
+                {
+                    "name": "models",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 59,
+            "description": "Sets attributes on related models. Primarily called after\na relationship key has changed on a related model from a\ncreate sync operation.",
+            "itemtype": "method",
+            "name": "_setRelatedAttr",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the attribute to set",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value to set",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "options",
+                    "description": "Any options to pass to the attribute set method",
+                    "type": "Object"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 75,
+            "description": "After a model is added to the related list, check for any models that\nmatch the relationship and add them to the relationship modelList",
+            "itemtype": "method",
+            "name": "_afterStoreAdd",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 93,
+            "description": "After a model is removed from the store, remove it from the\nrelationship if it exists",
+            "itemtype": "method",
+            "name": "_afterStoreRemove",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/to-one.js",
+            "line": 111,
+            "description": "After a related key has changed on a model in the store,\nwe need to determine whether or not it still belongs in\nthe list of related models",
+            "itemtype": "method",
+            "name": "_afterRelatedKeyChange",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "EventFacade"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ToOneRelationship",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 36,
+            "description": "Overrides default model behavior.\nFor models that dont have an explicit id set, use the\nclientId",
+            "itemtype": "attribute",
+            "name": "id",
+            "default": "clientId",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 51,
+            "description": "Whether relationship attributes should be included\nin the output from getAttrs",
+            "itemtype": "attribute",
+            "name": "outputRelationships",
+            "type": "{Boolean}",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 64,
+            "description": "Default set of relationships for this object.  Defined just like the\nATTRS property.  ie. an object literal of relationship configs.  See\nthe <a href=\"#method_addRelationship\">addRelationship</a> method for the\nlist of configuration properties",
+            "itemtype": "property",
+            "name": "RELATIONSHIPS",
+            "static": 1,
+            "type": "{Object}",
+            "example": [
+                "\n    RELATIONSHIPS: {\n        Employees: {\n            type: 'toMany',\n            key: 'id',\n            relatedModel: 'EmployeeModel',\n            relatedKey: 'companyId'\n        },\n        Customers: {\n            type: 'toMany',\n            key: 'id',\n            relatedModel: 'CustomerModel',\n            relatedKey: 'companyId'\n        }\n    }"
+            ],
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 92,
+            "description": "Whether this model is registered with the model store",
+            "type": "{Boolean}",
+            "itemtype": "property",
+            "name": "registered",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 101,
+            "description": "initializer lifecycle method",
+            "itemtype": "method",
+            "name": "initializer",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 138,
+            "description": "destructor lifecycle method",
+            "itemtype": "method",
+            "name": "destructor",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 157,
+            "description": "Adds a relationship with the given config to this model.",
+            "itemtype": "method",
+            "name": "addRelationship",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "A name for the relationship",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "Object literal of configuration properties",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "type",
+                            "description": "The type of relationship; toOne or toMany",
+                            "type": "String"
+                        },
+                        {
+                            "name": "key",
+                            "description": "The key on this model to use for the relationship",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "relatedModel",
+                            "description": "The related model type",
+                            "type": "String|Function"
+                        },
+                        {
+                            "name": "relatedKey",
+                            "description": "The key on the related model to use for\n    the relationship",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "listType",
+                            "description": "A custom modelList to use\n    for the relationship (toMany relationships only)",
+                            "type": "String|Function",
+                            "optional": true,
+                            "optdefault": "ModelList"
+                        }
+                    ]
+                }
+            ],
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 178,
+            "description": "Gets related models from a relationship",
+            "itemtype": "method",
+            "name": "getRelated",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the relationship",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Models related to this model.\n  For toMany relationships this will always be a model-list.\n  For toOne relationships, this will be a model instance or\n  null if no model matches the relationship.",
+                "type": "Model|ModelList|null"
+            },
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 195,
+            "description": "Gets a relationship by name",
+            "itemtype": "method",
+            "name": "getRelationship",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the relationship",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The relationship of the given name",
+                "type": "ModelRelationship|null"
+            },
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 207,
+            "description": "Overrides the default model implementation.  Newness\nis determined if the models id attribute is the same\nas the clientId attribute",
+            "itemtype": "method",
+            "name": "isNew",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 220,
+            "description": "Is this model registered with the store",
+            "itemtype": "method",
+            "name": "isRegistered",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 231,
+            "description": "Registers this model with the model store\nTODO:  should we have register and unregister events?",
+            "itemtype": "method",
+            "name": "register",
+            "chainable": 1,
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 251,
+            "description": "Removes a relationship",
+            "itemtype": "method",
+            "name": "removeRelationship",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the relationship",
+                    "type": "String"
+                }
+            ],
+            "chainable": 1,
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 274,
+            "description": "{name} [id:guid]",
+            "itemtype": "method",
+            "name": "toString",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 285,
+            "description": "Unregisters this model from the model store\nand destroys all its relationships",
+            "itemtype": "method",
+            "name": "unregister",
+            "chainable": 1,
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 308,
+            "description": "Creates an attribute on this object from a relationship config\nliteral.  The resulting attribute will be readOnly and lazyLoaded",
+            "itemtype": "method",
+            "name": "_addRelationshipAttr",
+            "params": [
+                {
+                    "name": "config",
+                    "description": "Object literal of configuration properties",
+                    "type": "Object"
+                },
+                {
+                    "name": "name",
+                    "description": "A name for the relationship",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 354,
+            "description": "Aggregates relationships from the class heirarchy",
+            "itemtype": "method",
+            "name": "_aggregateRelationships",
+            "return": {
+                "description": "Array of relationship configs",
+                "type": "Array"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 378,
+            "description": "AOP method fired after getAttrs that removes\nrelationships from the list of attributes returned",
+            "itemtype": "method",
+            "name": "_doAfterGetAttrs",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 403,
+            "description": "AOP method fired before destroy that configures relationships\nto be destroyed if the model is being deleted",
+            "itemtype": "method",
+            "name": "_doBeforeDestroy",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 445,
+            "description": "Destroys all relationships on this model",
+            "itemtype": "method",
+            "name": "_destroyRelationships",
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-relate/js/model-relate.js",
+            "line": 460,
+            "description": "Returns the internal relationship name",
+            "itemtype": "method",
+            "name": "_relName",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The user provided relationship name",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The internal relationship name",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ModelRelate",
+            "module": "ModelRelate"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 19,
+            "description": "The unique identifier for this object",
+            "itemtype": "property",
+            "name": "_yuid",
+            "type": "{String}",
+            "access": "private",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 29,
+            "description": "The hash of lists maintained by the store",
+            "itemtype": "property",
+            "name": "_lists",
+            "type": "{Object}",
+            "default": "{}",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 40,
+            "description": "Finds a model in the store by its id\nTODO:  expand this to search on more than just id",
+            "itemtype": "method",
+            "name": "find",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance, a Model constructor\n  or a string representation of the Model constructor relative\n  to the current scope. ex. 'MyApp.Models.FooModel'",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "The",
+                    "description": "id of the model we are looking for",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "The found model or null if no model could be found",
+                "type": "Model|null"
+            },
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 58,
+            "description": "Gets a list of models in the store for a given model.  A list\nwill be created if one does not already exist.",
+            "itemtype": "method",
+            "name": "getList",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance, a Model constructor\n  or a string representation of the Model constructor relative\n  to the current scope. ex. 'MyApp.Models.FooModel'",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "create",
+                    "description": "Flag indicating whether we want to create\n  a list if one doesnt already exist.  Defaults to true",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "A modelList of the given model",
+                "type": "ModelList"
+            },
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 80,
+            "description": "ModelStore[guid]",
+            "itemtype": "method",
+            "name": "toString",
+            "access": "protected",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 91,
+            "description": "Registers a model with the store",
+            "itemtype": "method",
+            "name": "registerModel",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance",
+                    "type": "Model"
+                }
+            ],
+            "return": {
+                "description": "The model instance",
+                "type": "Model"
+            },
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 108,
+            "description": "Unregisters all models in the store",
+            "itemtype": "method",
+            "name": "unregisterAll",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 122,
+            "description": "Unregisters a model in the store",
+            "itemtype": "method",
+            "name": "unregisterModel",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "The model instance we want to remove",
+                    "type": "Model"
+                }
+            ],
+            "return": {
+                "description": "The model instance",
+                "type": "Model"
+            },
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 138,
+            "description": "Creates a list for a given model",
+            "itemtype": "method",
+            "name": "_createList",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance, a Model constructor\n  or a string representation of the Model constructor relative\n  to the current scope. ex. 'MyApp.Models.FooModel'",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "A modelList for the given model",
+                "type": "ModelList"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 168,
+            "description": "Returns the constructor function of a given model\n\nNOTE: tried to use Y.cached here but model comes in as\n  BuiltClass when passing a model constructor, so it kept\n  getting confused.  still want to implement some sort of caching",
+            "itemtype": "method",
+            "name": "_getModelCtor",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance, a Model constructor\n  or a string representation of the Model constructor relative\n  to the current scope. ex. 'MyApp.Models.FooModel'",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "The constructor function for the given model,\n  or null if the model constructor could not be determined",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 200,
+            "description": "Determines the name of a model",
+            "itemtype": "method",
+            "name": "_getModelName",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "A Model instance, a Model constructor\n  or a string representation of the Model constructor relative\n  to the current scope. ex. 'MyApp.Models.FooModel'",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "The name of the model, or 'unknown' if the model\n  name could not be determined",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ModelStore",
+            "module": "model-store"
+        },
+        {
+            "file": "src/gallery-model-store/js/model-store.js",
+            "line": 218,
+            "description": "Initializes the store list by adding event handlers and setting a store property",
+            "itemtype": "method",
+            "name": "_initList",
+            "params": [
+                {
+                    "name": "list",
+                    "description": "The model list we are initializing",
+                    "type": "ModelList"
+                }
+            ],
+            "return": {
+                "description": "The initialized model list",
+                "type": "ModelList"
+            },
+            "access": "private",
+            "tagname": "",
+            "chainable": 1,
+            "class": "ModelStore",
+            "module": "model-store"
+        }
+    ]
+}
