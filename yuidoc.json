@@ -1,0 +1,12 @@
+{
+    "name": "BWGDoc",
+    "description": "YUIDoc documentation tool written in Javascript",
+    "version": "0.1.0",
+    "url": "http://bwg.github.com/yui3-gallery",
+    "options": {
+        "linkNatives": "true",
+        "attributesEmit": "true",
+        "paths": [ "./lib" ],
+        "outdir": "./api"
+    }
+}
