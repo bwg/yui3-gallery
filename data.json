@@ -6,6 +6,17 @@
         "url": "http://bwg.github.com/yui3-gallery"
     },
     "files": {
+        "src/gallery-base-revive/js/base-revive.js": {
+            "name": "src/gallery-base-revive/js/base-revive.js",
+            "modules": {
+                "BaseRevive": 1
+            },
+            "classes": {
+                "BaseRevive": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "src/gallery-model-relate/js/to-many.js": {
             "name": "src/gallery-model-relate/js/to-many.js",
             "modules": {},
@@ -68,6 +79,19 @@
         }
     },
     "modules": {
+        "BaseRevive": {
+            "name": "BaseRevive",
+            "submodules": {},
+            "classes": {
+                "BaseRevive": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 1,
+            "description": "Base extension providing ability to revive destroyed objects"
+        },
         "ModelRelate": {
             "name": "ModelRelate",
             "submodules": {},
@@ -112,6 +136,20 @@
         }
     },
     "classes": {
+        "BaseRevive": {
+            "name": "BaseRevive",
+            "shortname": "BaseRevive",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "BaseRevive",
+            "namespace": "",
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 10,
+            "description": "Base extension providing ability to revive destroyed objects"
+        },
         "ToManyRelationship": {
             "name": "ToManyRelationship",
             "shortname": "ToManyRelationship",
@@ -222,6 +260,85 @@
         }
     },
     "classitems": [
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 19,
+            "description": "initializer lifecycle method",
+            "itemtype": "method",
+            "name": "initializer",
+            "access": "protected",
+            "tagname": "",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 44,
+            "description": "Fully destroys this object.  can no longer be revived.",
+            "itemtype": "method",
+            "name": "destroyFinal",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 69,
+            "description": "Revives this object",
+            "itemtype": "method",
+            "name": "revive",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 77,
+            "description": "Event for the revive method, fired prior to revive.\nInvoking the preventDefault() method on the event object provided\nto subscribers will prevent revive from occuring.\n\nSubscribers to the \"after\" moment of this event, will be notified\nafter revive of the object is complete (and therefore\ncannot prevent revive).",
+            "itemtype": "event",
+            "name": "revive",
+            "preventable": "_defReviveFn",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object",
+                    "type": "EventFacade"
+                }
+            ],
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 105,
+            "description": "Default revive event handler\nrevives this object if it has previously been destroyed",
+            "itemtype": "method",
+            "name": "_defReviveFn",
+            "access": "private",
+            "tagname": "",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 128,
+            "description": "AOP method firing before _defDestroyFn.  Sets the destroyed attribute\nto true, resets destroy event state to unfired and prevents the\ndefault _defDestroyFn from executing",
+            "itemtype": "method",
+            "name": "_reviveDoBefore_defDestroyFn",
+            "access": "private",
+            "tagname": "",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
+        {
+            "file": "src/gallery-base-revive/js/base-revive.js",
+            "line": 150,
+            "description": "AOP method firing before detachAll. Prevent the default detachAll behavior\nwhich is called by the destroy method.",
+            "itemtype": "method",
+            "name": "_reviveDoBeforeDetachAll",
+            "access": "private",
+            "tagname": "",
+            "class": "BaseRevive",
+            "module": "BaseRevive"
+        },
         {
             "file": "src/gallery-model-relate/js/to-many.js",
             "line": 14,
