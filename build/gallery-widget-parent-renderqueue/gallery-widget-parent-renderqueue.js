@@ -1,4 +1,4 @@
-YUI.add('gallery-widget-parent-renderque', function(Y) {
+YUI.add('gallery-widget-parent-renderqueue', function(Y) {
 
 /**
 Plugin for WidgetParent that uses an async-queue to render children
