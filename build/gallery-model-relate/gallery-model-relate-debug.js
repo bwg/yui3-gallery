@@ -1136,7 +1136,6 @@ ModelRelate.prototype = {
             var relName = o[RELS];
             
             if (relName) {
-                console.log('removing relationship', relName);
                 this.removeRelationship(relName);
             }
 
