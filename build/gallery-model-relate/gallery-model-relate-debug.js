@@ -1159,4 +1159,4 @@ ModelRelate.prototype = {
 Y.ModelRelate = ModelRelate;
 
 
-}, '@VERSION@' ,{requires:['base', 'event-custom', 'array-extras', 'model-list', 'gallery-model-store']});
+}, 'gallery-2012.04.18-20-14' ,{requires:['base', 'event-custom', 'array-extras', 'model-list', 'gallery-model-store']});

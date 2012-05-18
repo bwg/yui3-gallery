@@ -5,6 +5,10 @@ http://developer.yahoo.net/yui/license.txt
 */
 
 /**
+ * @module gallery-paginator
+ */
+
+/**
  * ui Component to generate the page links
  *
  * @class Paginator.ui.PageLinks
@@ -18,6 +22,7 @@ Paginator.ui.PageLinks = function (p) {
     p.after('recordOffsetChange',this.update,this);
     p.after('rowsPerPageChange',this.update,this);
     p.after('totalRecordsChange',this.update,this);
+    p.after('disabledChange',this.update,this);
 
     p.after('pageLinksContainerClassChange', this.rebuild,this);
     p.after('pageLinkClassChange', this.rebuild,this);
@@ -163,6 +168,10 @@ Paginator.ui.PageLinks.prototype = {
      */
     render : function (id_base) {
 
+        if (this.container) {
+            this.container.remove(true);
+        }
+
         // Set up container
         this.container = Y.Node.create(
             '<span id="'+id_base+'-pages"></span>');
@@ -197,19 +206,23 @@ Paginator.ui.PageLinks.prototype = {
                 start        = range[0],
                 end          = range[1],
                 content      = '',
-                linkTemplate,i;
+                disabled     = p.get('disabled'),
+                i;
 
-            linkTemplate = '<a href="#" class="' + p.get('pageLinkClass') +
-                           '" page="';
             for (i = start; i <= end; ++i) {
                 if (i === currentPage) {
                     content +=
                         '<span class="' + p.get('currentPageClass') + ' ' +
                                           p.get('pageLinkClass') + '">' +
                         labelBuilder(i,p) + '</span>';
+                } else if (disabled) {
+                    content +=
+                        '<span class="' + p.get('pageLinkClass') +
+                           ' disabled" page="' + i + '">' + labelBuilder(i,p) + '</span>';
                 } else {
                     content +=
-                        linkTemplate + i + '">' + labelBuilder(i,p) + '</a>';
+                        '<a href="#" class="' + p.get('pageLinkClass') +
+                           '" page="' + i + '">' + labelBuilder(i,p) + '</a>';
                 }
             }
 

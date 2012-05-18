@@ -248,4 +248,4 @@ Y.ModelStore = function() {
 }();
 
 
-}, '@VERSION@' ,{requires:['base', 'model', 'model-list']});
+}, 'gallery-2012.04.18-20-14' ,{requires:['base', 'model', 'model-list']});
